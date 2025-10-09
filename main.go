@@ -25,12 +25,18 @@ func contactPage(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, "static/contact.html")
 }
 
+func galleryPage(w http.ResponseWriter, r *http.Request) {
+	// Render the gallery html page
+	http.ServeFile(w, r, "static/gallery.html")
+}
+
 func main() {
 
 	http.HandleFunc("/home", homePage)
 	http.HandleFunc("/courses", coursePage)
 	http.HandleFunc("/about", aboutPage)
 	http.HandleFunc("/contact", contactPage)
+	http.HandleFunc("/gallery", galleryPage)
 
 	err := http.ListenAndServe("0.0.0.0:8080", nil)
 	if err != nil {
