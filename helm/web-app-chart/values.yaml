@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: janohjr/wep-app
   pullPolicy: IfNotPresent
-  tag: "v1"
+  tag: "18372312888"
 
 ingress:
   enabled: false
