@@ -94,8 +94,8 @@ jobs:
 
       - name: Commit and Push changes
         run: |
-          git config --global user.email "frujuniorp@gmail.com"
-          git config --global user.email "anye-web"
+          git config  user.email "frujuniorp@gmail.com"
+          git config  user.email "Fru Junior"
           git add .
           git commit -m "Update tag in Helm Chart"
           git push
