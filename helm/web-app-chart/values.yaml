@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: janohjr/web-app
   pullPolicy: IfNotPresent
-  tag: "18372312888"
+  tag: "18373998894"
 
 ingress:
   enabled: false
