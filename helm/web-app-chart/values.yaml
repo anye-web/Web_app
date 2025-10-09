@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: janohjr/wep-app
+  repository: janohjr/web-app
   pullPolicy: IfNotPresent
   tag: "18372312888"
 
