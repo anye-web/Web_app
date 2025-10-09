@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: web-app
-          image: janohjr/wep-app:{{ .Values.image.tag }}
+          image: janohjr/web-app:{{ .Values.image.tag }}
           ports:
             - containerPort: 8080
