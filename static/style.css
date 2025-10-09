@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Lora&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #0a51cc;
+  --secondary-color: #3474e6;
+  --light-color: #fff;
+  --dark-color: #001;
+  --gray-clr: #2d2d2d;
+  --green-clr: #2ad482;
+  --greenshade-clr: #55dd9b;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+
+  --transition-5s: all 0.5s ease;
+}
+html {
+  font-size: 62.5%;
+  /* scroll-behavior: smooth; */
+}
+*:focus {
+  outline: none;
+  /* box-shadow: 0 0 0 5px rgba(42, 212, 130, 0.3); */
+}
+
+body {
+  font-family: "Lora", serif;
+  font-size: 1.8rem;
+  color: var(--light-color);
+  background-color: var(--gray-clr);
+  line-height: 1.6;
+  position: relative;
+}
+
+a {
+  color: var(--light-color);
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  border-radius: 0.4rem;
+  display: inline-block;
+}
+/* .btn {
+  padding: 1.2rem 2.4rem;
+  border-radius: 0.4rem;
+  border: none;
+  font-size: 1.6rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: var(--transition-5s);
+  color: var(--light-color);
+  background-color: var(--green-clr);
+}
+
+.btn:hover {
+  background-color: var(--greenshade-clr);
+} */
+
+.container {
+  max-width: 100rem;
+  margin: 3rem auto;
+  padding: 0 4rem;
+  overflow: hidden;
+}
+
+.primary-heading {
+  font-family: "Lobster", cursive;
+  font-size: 7.5rem;
+  text-align: center;
+  margin-top: 3rem;
+
+  color: transparent;
+  background: url(./images/animal-4.jpg);
+  background-position: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.btn-content {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 0.4rem;
+  border: 2px solid var(--green-clr);
+  font-size: 1.6rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: var(--transition-5s);
+  color: var(--green-clr);
+  background-color: transparent;
+  text-transform: capitalize;
+}
+
+.btn-active,
+.btn:hover {
+  background-color: var(--green-clr);
+  color: var(--light-color);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin: 1rem 3rem;
+}
+.title {
+  font-size: 2.4rem;
+  color: var(--green-clr);
+  margin-top: 4rem;
+  text-transform: capitalize;
+}
+.gallery-img {
+  height: 20.7rem;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: var(--transition-5s);
+}
+
+.img:hover {
+  scale: 1.05;
+}
+
+/* Overlay gallery */
+.overlay-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(45, 45, 45, 0.929);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  transition: all 0.9s ease;
+  /* overflow: hidden; */
+}
+.overlay-container .container {
+  padding: 0;
+  /* overflow: visible; */
+}
+.show-overlay {
+  display: block;
+}
+.overlay-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.overlay-slider {
+  margin-top: 5rem;
+  height: 70vh;
+  width: 100%;
+  position: relative;
+}
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: var(--transition-5s);
+}
+.slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-5s);
+}
+
+.controls {
+  border: none;
+  font-size: 4rem;
+  line-height: 4rem;
+  color: var(--light-color);
+  background: var(--green-clr);
+  border-radius: 50%;
+  padding: 1rem;
+  z-index: 1000;
+  position: absolute;
+  cursor: pointer;
+  transition: var(--transition-5s);
+}
+.controls:hover {
+  background: var(--greenshade-clr);
+}
+
+.next {
+  top: 45%;
+  right: 1%;
+}
+.prev {
+  top: 45%;
+  left: 1%;
+}
+
+.slide-dots {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.dots {
+  height: 3rem;
+  width: 3rem;
+  background: var(--gray-clr);
+  border: 1px solid var(--green-clr);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.active-dot {
+  background: var(--green-clr);
+}
+
+@media only screen and (max-width: 37.5em) {
+  html {
+    font-size: 50%;
+  }
+  .content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .slide-img{
+    padding: 0 4rem;
+}
